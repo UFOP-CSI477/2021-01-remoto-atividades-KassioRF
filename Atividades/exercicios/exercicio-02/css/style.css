@@ -1,0 +1,184 @@
+
+/*  ----- Local vars ----- */
+
+:root {
+  --white: #eee;
+  --black: #404040;
+
+  --border_blue: rgb(26, 115, 232, 0.6);
+  --border_gray: rgb(64, 64, 64, 0.6);
+}
+
+/*  ----- Geral ----- */
+body {
+  margin:0;
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--black);
+}
+
+main {
+  min-height: 60vh;
+}
+
+.default-container {
+
+  margin-top: 5vh;
+  padding: 5vh 20vh;
+}
+
+a {
+  text-decoration: none;
+}
+
+a, a:visited, a:hover, a:active {
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.sub-section-title {
+  padding-top: 1em;
+
+}
+/*  ----- Nav-bar ----- */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+
+  height: 10vh;
+  border: 1px solid black;
+  background-color: var(--black);
+}
+
+.nav ul {
+  padding-top: .75em;
+  list-style: none;
+}
+.nav li{
+  float: left;
+  margin: 0 3rem;
+  color: var(--white);
+  font-size: 18px;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
+
+/*  ----- index ----- */
+
+.home-title {
+  text-align: center;
+
+  color: var(--white);
+  background-color: var(--black);
+  border-radius: 1.2em;
+  margin: 0 20em;
+  padding: 1em 0;
+}
+
+
+/*  ----- perfil ----- */
+.profile-pic img {
+  border-radius: 50%;
+  width:9%;
+  height: 15%;
+}
+
+
+.profile-user-data {
+  padding: 2em;
+  padding-left: 4em;
+}
+
+.profile-data {
+  padding-top: 1em;
+}
+
+/*  ----- cadastro ----- */
+.form-content {
+  width: 50%;
+  padding-left: 5rem;
+  margin-top: 3em;
+}
+label {
+  text-transform: capitalize;
+  font-weight: 600;
+
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  
+  border-color: var(--border_gray);
+  border-style: double;
+  border-radius: .25em;
+
+}
+
+.form-content  div {
+
+  padding: 1em;
+
+}
+
+.radio-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.radio-group div {
+  padding: 0.25rem !important;
+}
+
+
+
+/*  ----- relatorio ----- */
+.relatorio-area {
+  width: 65%;
+  padding-left: 3em;
+}
+#relatorio {
+  width: 100%;
+
+}
+
+#relatorio, #relatorio th, #relatorio td {
+  border: 1px solid var(--border_gray);
+
+  border-collapse: collapse;
+}
+
+#relatorio th,  td {
+  padding: .45em;
+}
+
+#relatorio th {
+  font-size: 12pt;
+}
+
+#relatorio > tbody > tr {
+  cursor: pointer;
+  text-align: center;
+}
+
+#relatorio > tbody > tr:hover {
+  background-color:var(--white);
+}
+
+
+/*  ----- footer ----- */
+
+footer {
+  background-color: var(--black);
+  color: var(--white);
+  /* position: fixed; */
+  left: 0;
+  bottom: 0;
+ 
+}
