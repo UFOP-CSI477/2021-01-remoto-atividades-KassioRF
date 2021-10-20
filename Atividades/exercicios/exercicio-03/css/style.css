@@ -1,0 +1,111 @@
+
+/*  ----- Vars ----- */
+
+:root {
+  --white: #eee;
+  --black: #404040;
+
+  --border_blue: rgb(26, 115, 232, 0.6);
+  --border_gray: rgb(64, 64, 64, 0.6);
+}
+
+/* ---- Geral* ---- */
+
+body {
+  margin: 0;
+  color: var(--black);
+}
+
+main {
+  padding: 10vh 0;
+  min-height: 80vh;
+}
+
+/* ---- navbar ---- */
+
+#navbarNavDropdown {
+  padding: 0.5em 9em;
+  justify-content: right;
+}
+
+.nav-item {
+  padding:  0 1.5em;
+}
+
+/* ---- Home ---- */
+
+.jumbotron {
+  padding: 5rem;
+  text-align: center;
+}
+
+
+/*  ----- perfil ----- */
+.profile-pic img {
+  border-radius: 50%;
+  width: 125px;
+  height: 138px;
+}
+
+
+.profile-user-data {
+  padding: 2em;
+  padding-left: 4em;
+}
+.profile-user-data h2 {
+  margin-bottom: 1em;
+}
+
+.profile-data {
+  padding-top: 1em;
+  padding-left: 2em;
+}
+
+
+/* ---- cadastro ----*/
+
+.form-content {
+  display: flex;
+  flex-direction: column;  
+}
+
+.cadastro h3 {
+  margin-bottom: 1.5em;
+}
+
+.cadastro form {
+  padding-left: 2em;
+}
+
+label {
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.form-buttons {
+  padding-top: 2.5em;
+}
+
+form .row {
+  justify-content: center;
+}
+
+/*  ----- relatório ----- */
+
+.relatorio .table-section > table {
+
+  text-align: center;
+
+}
+
+/*  ----- footer ----- */
+
+footer {
+  color: var(--white);
+  left: 0;
+  bottom: 0;
+}
+
+footer .row {
+  padding: 4vh 0;
+}
