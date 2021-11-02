@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <title>JavaScript - exercicio 4.3</title>
+</head>
+
+<style>
+  body {
+    display: flex;
+    margin: 10vh;
+    min-height: 40vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  p {
+    font-size: 14pt;
+  }
+
+
+  #main-title {
+    padding: 2rem;
+  }
+
+  .card-body {
+    text-align: center;
+  }
+
+  .card-title {
+    padding-top: 2rem;
+  }
+
+  .horarios {
+    padding: 6rem;
+
+  }
+
+  .card-text {
+    padding: 1rem;
+  }
+</style>
+
+<script>
+
+  const processo = f => {
+
+    const get_zone = zone => {
+      return {
+        timeZone: `America/${zone}`,
+        day: 'numeric',
+        month: 'numeric',
+        year: 'numeric',
+        hour: 'numeric',
+        minute: 'numeric',
+        second: 'numeric'
+      }
+    }
+
+    const noronha = new Intl.DateTimeFormat([], get_zone('noronha'));
+    const brasilia = new Intl.DateTimeFormat([], get_zone('sao_paulo'));
+    const manaus = new Intl.DateTimeFormat([], get_zone('manaus'));
+    const rio_branco = new Intl.DateTimeFormat([], get_zone('rio_branco'));
+
+    //document.getElementById('contador').innerHTML = `contador = ${contador}`;
+    document.getElementById('noronha').innerHTML = noronha.format(new Date());
+    document.getElementById('brasilia').innerHTML = brasilia.format(new Date());
+    document.getElementById('manaus').innerHTML = manaus.format(new Date());
+    document.getElementById('rio_branco').innerHTML = rio_branco.format(new Date());
+
+  };
+
+  setInterval(processo);
+
+</script>
+
+<body>
+
+  <main class='container'>
+    <div id="main-title">
+      <h1>Exercício 4.3</h1>
+    </div>
+
+
+    <div id="relógio">
+
+      <div class="card">
+
+        <div class="card-header">
+          Atividade JavaScript - Set Interval
+        </div>
+
+        <div class="card-body">
+          <h3 class="card-title">Horários Brasil</h3>
+
+          <div class="col-12 horarios">
+            <div class="row">
+
+              <div class="col-3">
+                <h5>Ilha Fernando de Noronha</h5>
+                <p id="noronha">=D</p>
+              </div>
+
+              <div class="col-3">
+                <h5>Brasília</h5>
+                <p id="brasilia">=D</p>
+              </div>
+
+              <div class="col-3">
+                <h5>Amazonas</h5>
+                <p id="manaus">=D</p>
+              </div>
+
+              <div class="col-3">
+                <h5>Acre</h5>
+                <p id="rio_branco">=D</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

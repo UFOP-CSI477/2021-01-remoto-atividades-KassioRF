@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <title>JavaScript - exercicio 4.1</title>
+</head>
+
+<style>
+  body {
+    display: flex;
+    margin: 10vh;
+    min-height: 40vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+</style>
+
+<script>
+  function Pessoa(nome, idade, endereco) {
+    this.nome = nome;
+    this.idade = idade;
+    this.endereco = endereco;
+  };
+
+  const carregarDados = f => {
+    const nome = window.prompt('Nome:');
+    const idade = window.prompt('Idade:');
+    const endereco = window.prompt('Endereco:');
+
+    const pessoa = new Pessoa(nome, idade, endereco);
+
+    console.log(pessoa);
+
+    document.getElementById('nome').innerHTML = pessoa.nome;
+    document.getElementById('idade').innerHTML = pessoa.idade;
+    document.getElementById('endereco').innerHTML = pessoa.endereco;
+
+  };
+
+</script>
+
+<body>
+
+  <main class='container'>
+    <div id="main-title">
+      <h1>Exercício 4.1</h1>
+    </div>
+
+    <div id="button">
+      <input type="button" class="btn btn-primary" value="Carregar" onclick="carregarDados()">
+    </div>
+
+    <div id="dados" class="col-4">
+      <table class="table">
+        <tr>
+          <td>Nome:</td>
+          <td id="nome"></td>
+        </tr>
+        <tr>
+          <td>Idade:</td>
+          <td id="idade"></td>
+        </tr>
+        <tr>
+          <td>Endereco:</td>
+          <td id="endereco"></td>
+        </tr>
+      </table>
+
+    </div>
+
+
+
+  </main>
+
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+
+  <title>JavaScript - exercicio 4.2</title>
+</head>
+
+<style>
+  body {
+    display: flex;
+    margin: 10vh;
+    min-height: 40vh;
+  }
+
+  main {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+  }
+
+  div {
+    padding: 1.5rem 0;
+  }
+
+  #main-title {
+    padding: 2rem;
+  }
+
+  .row {
+    justify-content: space-around;
+  }
+
+  #dados {
+    padding-top: 3rem;
+  }
+</style>
+
+<script>
+  function Pessoa(nome, idade, endereco) {
+    this.nome = nome;
+    this.idade = idade;
+    this.endereco = endereco;
+  };
+
+  const inserirDados = f => {
+    const nome = formData.nome.value;
+    const idade = formData.idade.value;
+    const endereco = formData.endereco.value;
+
+    const pessoa = new Pessoa(nome, idade, endereco);
+
+    document.getElementById('tb_nome').innerHTML = pessoa.nome;
+    document.getElementById('tb_idade').innerHTML = pessoa.idade;
+    document.getElementById('tb_endereco').innerHTML = pessoa.endereco;
+
+  };
+
+
+</script>
+
+<body>
+
+  <main class='container'>
+    <div id="main-title">
+      <h1>Exercício 4.2</h1>
+    </div>
+
+    <div class="row">
+      <div id="form-element" class=" col-4">
+        <form action="" name="formData">
+
+          <label for="nome">Nome:</label>
+          <input class="form-control form control-sm" type="text" name="nome" id="nome">
+          <label for="idade">Idade:</label>
+          <input class="form-control form control-sm" type="number" name="idade" id="idade">
+          <label for="endereco">Endereço</label>
+          <input class="form-control form control-sm" type="text" name="endereco" id="endereco">
+
+        </form>
+
+        <div id="button">
+          <input type="button" class="btn btn-primary" value="Carregar dados" onclick="inserirDados()">
+        </div>
+
+      </div>
+
+      <div id="dados" class="col-4">
+        <table class="table">
+          <tr>
+            <td>Nome:</td>
+            <td id="tb_nome"></td>
+          </tr>
+          <tr>
+            <td>Idade:</td>
+            <td id="tb_idade"></td>
+          </tr>
+          <tr>
+            <td>Endereço:</td>
+            <td id="tb_endereco"></td>
+          </tr>
+        </table>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
