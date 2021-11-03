@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="./01-calculadora/css/style.css">
+
+  <title>01 - Calculadora</title>
+
+</head>
+
+<body>
+
+  <main class="container">
+    <div class="row">
+      <div>
+        <h4>Exercicio Pratico - 1: Calculadora</h4>
+      </div>
+    </div>
+
+    <div class="row">
+      <div id="content" class="">
+        <div class="calc-body col-12">
+
+          <div class="row row-op-display">
+            <div id="op-display"></div>
+          </div>
+
+          <div class="row row-display">
+            <input type="text" class="form-control" name="display" id="display" readonly>
+          </div>
+
+          <div class="calc-input-group col-12">
+
+            <div class="row row-inputs">
+
+              <div class="col-3"> <input id="backspace" type="button" class="btn btn-success calc-btn"
+                  value="&#8592;"></input>
+              </div>
+              <div class="col-2"> <input id="percent" type="button" class="btn btn-primary calc-btn " value="%"></input>
+              </div>
+              <div class="col-2"> <input id="square" type="button" class="btn btn-primary calc-btn "
+                  value="&#8730;"></input>
+              </div>
+
+              <div class="col-2"> <input id="pow" type="button" class="btn btn-primary calc-btn "
+                  value="&#119909;²"></input></div>
+
+              <div class="col-3"> <input type="button" class="btn btn-warning calc-btn operator"
+                  value="&divide;"></input>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="row row-inputs">
+
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="7"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="8"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="9"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-warning calc-btn operator" value="x"></input></div>
+
+          </div>
+
+          <div class="row row-inputs">
+
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="4"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="5"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="6"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-warning calc-btn operator" value="-"></input></div>
+
+          </div>
+
+          <div class="row row-inputs">
+
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="1"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="2"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="3"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-warning calc-btn operator" value="+"></input></div>
+
+          </div>
+
+          <div class="row row-inputs">
+
+            <div class="col-3"> <input id=reset type="button" class="btn btn-success calc-btn " value="C"></input>
+            </div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="0"></input></div>
+            <div class="col-3"> <input type="button" class="btn btn-light calc-btn btn-value" value="."></input></div>
+            <div class="col-3"> <input id="result-btn" type="button" class="btn btn-success calc-btn "
+                value="="></input>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+
+
+  <!-- Bootstrap scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script src="./01-calculadora/js/script.js"></script>
+
+</body>
+
+</html>
