@@ -1,0 +1,157 @@
+:root {
+  /* fonts */
+  --fontLogo: 'Source Code Pro', monospace;
+
+  /* colors */
+  --bgBlack:#2d3436;
+  --bgWhite: #fff;
+  --bgGreen: rgb(32, 191, 107, .6);
+  --fontGreen: #26de81;
+  --lightBlack: #5d6b6f;
+  /* shadows */
+  --shadowBottom: 0px 0px 10px rgb(45 52 24 / 40%);
+  --boxShadow: 0px 0px 10px rgb(45 52 24 / 40%);
+}
+
+
+/* ---- Geral ---- */
+body {
+  background-color: var(--bgGreen);
+  color: var(--lightBlack);
+}
+main {
+  min-height: 90vh;
+}
+
+h5 {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+}
+
+footer {
+  background-color: var(--bgBlack);  
+  min-height: 5vh;
+  padding-bottom: 0px;
+  position:inherit;
+  bottom:0;
+  width:100%;
+}
+
+/* ---- Header ---- */
+.navbar {
+  background-color: var(--bgBlack);  
+  height: 12vh;
+  box-shadow: var(--shadowBottom);
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--fontGreen);
+}
+
+#logo {
+  font-family: var(--fontLogo);
+  font-weight: 500;
+  font-size: 20pt;
+}
+
+/* ---  Menu --- */
+
+.menu-row {
+  background-color: var(--bgWhite);
+  justify-content: space-around;
+  margin: 8rem;
+  padding: 2rem 0;
+
+  border-radius: .75rem;
+  box-shadow: var(--boxShadow);
+}
+
+
+
+#pills-tab {
+  justify-content: space-around;
+}
+
+.nav-item button {
+  width: 10rem;
+}
+
+.tab-content {  
+  padding: 1rem 4rem;
+
+}
+
+.tab-pane {
+  margin-top: 1rem;
+}
+
+.tab-content::before {
+  display: inline-block;
+  content: "";
+  border-top: .12rem solid #198754;
+  width: 100%;
+  
+  transform: translateY(-1rem);
+}
+
+/* ---- Minhas chaves ---- */
+.menu-content {
+  padding-top: 1.5rem;
+  justify-content: center;
+}
+
+.menu-content-saldo {
+  padding-top: 1.5rem;
+  justify-content: space-between;
+}
+
+.head-tr {
+  font-style: italic;
+}
+tbody > tr > th {
+  font-weight: 500;
+}
+
+/* --- Transferir ---*/
+.hidden {
+  display: none;
+}
+
+
+
+/* modal */
+.row-modal {
+  justify-content: center;
+  padding-top: 2rem;
+}
+
+.modal-body {
+  padding-left: 6rem;
+}
+/* --- Receber ---*/
+
+/* --- Saldo / transações ---*/
+
+
+.saldo-entrada {
+  color:#198754;
+}
+.saldo-saida {
+  color: #c23616;
+}
+.extrato-chave-usuario {
+  color: #0984e3;
+}
+
+@media(max-width: 1185px) {
+  .menu-row {
+    margin: 8rem 2rem; 
+  }
+}
+
+@media(max-width: 977px) {
+  .menu-row {
+    margin: 8rem 5px; 
+  }
+}
