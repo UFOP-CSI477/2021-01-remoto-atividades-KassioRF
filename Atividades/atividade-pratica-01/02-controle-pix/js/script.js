@@ -179,13 +179,9 @@ const getBankByCode = code => {
   return fetch(`https://brasilapi.com.br/api/banks/v1/${code}`)
     .then(response => response.json())
     .then(function (data) {
-      console.log(data);
       return data;
     })
     .catch(error => console.log(error));
-
-
-
 }
 
 //-- Consome API bancos
