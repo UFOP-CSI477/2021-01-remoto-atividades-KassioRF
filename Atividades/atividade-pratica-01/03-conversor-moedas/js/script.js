@@ -185,7 +185,7 @@ const convert = data => {
 
 }
 
-
+//Caso a data atual seja inválida vai decrementando o dia da data atual até que a api retorne um resultado válido.
 const validar_data = (cotacao, dataCotacao) => {
   if (cotacao.length > 0) {
     return dataCotacao;
@@ -197,7 +197,7 @@ const validar_data = (cotacao, dataCotacao) => {
     return obter_data_atual_valida(updateData);
   }
 }
-
+//Passa a data recorrente como parâmentro para a API e chama a função  validar_data()
 const obter_data_atual_valida = (dataCotacao) => {
 
 
@@ -212,6 +212,7 @@ const obter_data_atual_valida = (dataCotacao) => {
 
 };
 
+//-- Recupera os dados inseridos pelo usuário e inicia o processo de conversão
 const getConvert = () => {
 
 

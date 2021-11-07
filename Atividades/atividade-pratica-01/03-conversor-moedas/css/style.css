@@ -98,7 +98,7 @@ footer {
 }
 
 option[disabled='disabled'] {
-  background-color: var(--bgbody);
+  background-color: #e6e6e6;
 }
 
 /* ---- Resultado ---  */

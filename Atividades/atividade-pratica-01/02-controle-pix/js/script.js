@@ -152,8 +152,6 @@ function Conta(chaves, extrato, banco) {
 
 };
 
-
-
 var conta = new Conta(chaves, extrato, 1);
 
 
@@ -269,8 +267,6 @@ const defineKeyInput = element => {
 /** --- Métodos de atualização da página  ---  */
 const getTransactionHistory = (tbody, filter) => {
 
-
-
   tbody.innerHTML = '';
   let extrato;
 
@@ -322,11 +318,7 @@ const getTransactionHistory = (tbody, filter) => {
 
   saldoElement.innerHTML = `R$ ${saldo}`;
 
-
-
-
 }
-
 
 //-- Carrega chaves do usuario
 const loadUserKeys = () => {
