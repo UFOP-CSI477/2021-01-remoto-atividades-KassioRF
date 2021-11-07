@@ -4,21 +4,21 @@
 
   /* colors */
   --bgBlack:#2d3436;
-  --bgbody:   	#f2f2f2;
+  --bgbody:	#465053;
   --borderWhite: #e6e6e6;
   --bgWhite: #fff;
   --bgGreen: rgb(32, 191, 107, .6);
   --fontGreen: #26de81;
   --lightBlack: #5d6b6f;
   /* shadows */
-  --shadowBottom: 0px 0px 10px rgb(45 52 24 / 40%);
-  --boxShadow: 0px 0px 10px rgb(45 52 24 / 10%);
+  --shadowBottom: 0px 0px 10px rgb(230 230 230 / 30%);
+  --boxShadow: 0px 0px 10px rgb(255 255 255 / 30%);
 }
 
 
 /* ---- Geral ---- */
 body {
-  background-color: var(--bgbody);
+  background-color: var(--bgbody) !important;
   /* color: var(--lightBlack); */
 
 }
