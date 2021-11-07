@@ -45,7 +45,6 @@ const carregarMoedas = data => {
       converterPara.appendChild(option.cloneNode(true));
       converterDe.appendChild(option.cloneNode(true));
     }
-    //converterPara.appendChild(option.cloneNode(true));
 
     moedas.push(d);
 
@@ -104,7 +103,8 @@ const invertOption = () => {
 
 /** ------- Conversão ------- */
 
-// teste
+
+//-- Função utilizada para tratar o fetch de duas url's 
 async function getAllUrls(urls) {
   try {
     var data = await Promise.all(
@@ -125,10 +125,8 @@ async function getAllUrls(urls) {
 }
 //-- Atualizar resultado
 const updateResult = (data) => {
-  console.log(data);
 
   //resultado da conversao
-
   let deMoeda = document.getElementById('res-moeda-de');
   let deValor = document.getElementById('res-valor-de');
   let paraMoeda = document.getElementById('res-moeda-para');
@@ -142,6 +140,7 @@ const updateResult = (data) => {
 
   //data da cotacao
   document.getElementById('data-cotacao').innerHTML = ' - ' + data.date.split('.')[0];
+
   //resumo da cotacao
   let cotacao = document.getElementById('cotacao-info');
   let entrada = document.createElement('p');
@@ -152,6 +151,8 @@ const updateResult = (data) => {
   cotacao.innerHTML = '';
   cotacao.appendChild(entrada);
   cotacao.appendChild(saida);
+
+  return data
 
 };
 
@@ -182,12 +183,38 @@ const convert = data => {
 
   return data;
 
-  //updateResult(data, resultado);
-
-
 }
 
+
+const validar_data = (cotacao, dataCotacao) => {
+  if (cotacao.length > 0) {
+    return dataCotacao;
+  } else {
+
+    let updateData = new Date(dataCotacao);
+    updateData = `${adicionaZero(updateData.getMonth() + 1)}-${adicionaZero(updateData.getDate() - 1)}-${updateData.getFullYear()}`
+
+    return obter_data_atual_valida(updateData);
+  }
+}
+
+const obter_data_atual_valida = (dataCotacao) => {
+
+
+  let url = `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='USD'&@dataCotacao='${dataCotacao}'&$top=100&$format=json`
+
+  return (
+    fetch(url)
+      .then(response => response.json())
+      .then(data => validar_data(data.value, dataCotacao))
+      .catch(error => console.log(error))
+  )
+
+};
+
 const getConvert = () => {
+
+
   let convDe = document.getElementById('converter-de');
   let convPara = document.getElementById('converter-para');
 
@@ -199,26 +226,43 @@ const getConvert = () => {
   let de = convDe.options[indexDe].value;
   let para = convDe.options[indexPara].value;
 
+  let data = new Date();
+  data = `${adicionaZero(data.getMonth() + 1)}-${adicionaZero(data.getDate())}-${data.getFullYear()}`;
 
-  //@ ADD DATA
-  data = getAllUrls([
-    `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${de}'&@dataCotacao='11-05-2021'&$top=100&$format=json`,
-    `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${para}'&@dataCotacao='11-05-2021'&$top=100&$format=json`
-  ]).then(d =>
-    convert(
-      {
-        'moedaDe': de,
-        'moedaPara': para,
-        'cotacaoDe': d[0].value[d[0].value.length - 1],
-        'cotacaoPara': d[1].value[d[1].value.length - 1],
-        'valor': valor,
-        'date': '',
-        'resultado': 0
-      }
+  //Obtém data válida e consome api
+  result = validar_data([], data).then(dataCotacao => {
+    //@ ADD DATA
+    data = getAllUrls([
+      `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${de}'&@dataCotacao='${dataCotacao}'&$top=100&$format=json`,
+      `https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoMoedaDia(moeda=@moeda,dataCotacao=@dataCotacao)?@moeda='${para}'&@dataCotacao='${dataCotacao}'&$top=100&$format=json`
+    ]).then(d =>
+      convert(
+        {
+          'moedaDe': de,
+          'moedaPara': para,
+          'cotacaoDe': d[0].value[d[0].value.length - 1],
+          'cotacaoPara': d[1].value[d[1].value.length - 1],
+          'valor': valor,
+          'date': '',
+          'resultado': 0
+        }
 
 
-    ))
-    .then(resultado => updateResult(resultado));
+      ))
+      .then(resultado => updateResult(resultado))
+      .then(data => plotCotacao(data));
+
+
+  });
+
 
 };
 
+
+/* Funcao auxiliar para padronizar data para api*/
+function adicionaZero(numero) {
+  if (numero <= 9)
+    return "0" + numero;
+  else
+    return numero;
+}

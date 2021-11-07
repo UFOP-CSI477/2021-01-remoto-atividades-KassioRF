@@ -62,6 +62,10 @@ footer {
   font-family: var(--fontLogo);
   font-weight: 500;
   font-size: 20pt;
+  text-decoration: none;
+}
+#logo:hover {
+  color: var(--bgWhite);
 }
 
 
@@ -117,4 +121,46 @@ option[disabled='disabled'] {
 }
 #my_dataviz {
   padding: 2rem 0;
+}
+
+
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.x.axis path {
+    display: none;
+}
+
+.line {
+    fill: none;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+}
+
+.overlay {
+    fill: none;
+    pointer-events: all;
+}
+
+.focus circle {
+    fill: steelblue;
+}
+
+.focus text {
+    font-size: 14px;
+}
+
+.tooltip {
+    fill:var(--bgWhite);
+    stroke: #000;
+    opacity: .9 !important;
+}
+
+.tooltip-date, .tooltip-value {
+    font-weight: 400;
 }
